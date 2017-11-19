@@ -3,17 +3,14 @@ var bcon = document.getElementById('b-con');
 var scre = document.getElementById('screen').children;
 var carouselWrap = document.getElementById('js-carousel__wrap').children;
 var count;
-var images = document.images;
-var images_total_count = images.length;
-var images_loade_count = 0;
-var perc_display = document.getElementById('load');
-var preloader = document.getElementById('page-preloader');
 
-for (var i = 0; i < images_total_count; i++) {
-	image_clone = new Image();
-	image_clone.onload = image_loaded;
-	image_clone.onerror = image_loaded;
-	image_clone.src = images[i].src;
+document.body.onload = function(){
+var preloader = document.getElementById('page-preloader');
+    setTimeout(function(){
+        if(!preloader.classList.contains('done')){
+            document.body.classList.add('done');
+        }
+    },1000);
 }
 
 function isVisible(elem) {
@@ -49,20 +46,7 @@ showVisible();
 
 
 
-function image_loaded() {
-	images_loade_count++;
-	perc_display.innerHTML = (((100 / images_total_count) * images_loade_count) << 0) + '%';
 
-	if (images_loade_count >= images_total_count) {
-		setTimeout(function() {
-			if (!preloader.classList.contains('done')) {
-				preloader.classList.add('done');
-				setTimeout(function(){document.body.classList.add('ready');}, 500)
-				
-			}
-		}, 1000);
-	}
-}
 
 
 
@@ -281,7 +265,6 @@ function sendFormData(formVal) {
 		// формируем тело запроса, в котором указываем имена полей и их значения
 		body 	= 'username=' + encodeURIComponent(formVal.username) +
 				  '&usermail=' + encodeURIComponent(formVal.usermail) +
-				  '&subject=' + encodeURIComponent(formVal.subject) +
 				  '&textmess=' + encodeURIComponent(formVal.textmess);
  
 	// указываем метод передачи данных, адрес php-скрипта, который эти данные
@@ -301,8 +284,7 @@ function sendFormData(formVal) {
 	xhr.onreadystatechange = function() {
 		// данные на сервер отправлены удачно и получен от него положительный ответ
 		if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-			// здесь расположен код вашей callback-функции
-			// например, она может выводить сообщение об успешной отправке письма
+			alert('aaaaa');
 		}
 	};
 }

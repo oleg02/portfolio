@@ -1,439 +1,7 @@
 @import "fonts"
 
-*
-	box-sizing: border-box
-	&:before, &:after
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box
-
-*::-webkit-input-placeholder
-	color: #666
-	opacity: 1
-
-*:-moz-placeholder
-	color: #666
-	opacity: 1
-
-*::-moz-placeholder
-	color: #666
-	opacity: 1
-
-*:-ms-input-placeholder
-	color: #666
-	opacity: 1
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
-
-html, body
-	height: 100%
-
-body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.65
-	font-family: 'OpenSans', sans-serif;
-	overflow-x: hidden
-	opacity: 1
-	background-color: #12314d
-	// scroll-behavior: smooth
-
-.preloader
-	width: 100vw
-	height: 100vh
-	left: 0
-	top: 0
-	position: fixed
-	background-color: #12314d
-	opacity: 1
-	z-index: 99999
-	transition: all 1s
-	visibility: visible
-	.loader
-		line-height: 75px
-		text-align: center
-		position: absolute
-		left: 50%
-		top: 50%
-		transform: translate(-50%, -50%)
-		color: #fff
-		font-size: 100px
-		font-family: 'Concert One', Helvetica,Arial,sans-serif
-		height: 120px
-		width: 100%
-		background-color: #983c3c
-	&.done
-		opacity: 0
-		visibility: hidden
-
-
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-
-.bg
-	position: absolute
-	left: 0px
-	right: 0px
-
-.head
-	position: relative
-	background-color: rgba(90, 127, 152, 0.65)
-	height: 60px
-	width: 100%
-	box-shadow: 0px 12px 12px 0px rgba(90, 127, 152, 0.65)
-	z-index: 3
-	position: fixed
-
-.nav-container
-	align-items: center
-	height: 60px
-	display: flex
-	margin-top: 4px
-	.nav
-		align-self: center
-		a
-			padding: 26px 23px 23px
-			border-bottom: 4px solid transparent
-			color: #fff
-			text-decoration: none
-			font-family: 'OpenSans', sans-serif;
-			font-weight: bold
-			text-transform: uppercase
-			font-size: 14px
-			display: block
-			&:hover
-				background-color: rgba(90, 127, 152, 0.27)
-			
-.logo-cont
-	display: flex
-	align-items: center
-	height: 70px
-
-.logo
-	align-self: center
-
-
-.bg-text::before
-	background-color: #000
-
-.bg-text
-	position: relative
-	height: 100vh
-	width: 100vw
-	display: flex
-	justify-content: center
-
-
-
-	
-	.text-container
-		align-items: center
-		align-self: center;
-		
-.h1
-	color: #fff
-	font-size: 111px
-	text-transform: uppercase
-	letter-spacing: 10px
-	font-weight: bold
-	font-family: 'Concert One', cursive;
-	transform: translateX(-20px)
-	opacity: 0
-
-
-.ready .h1
-	animation: hone 2s ease 1s forwards 
-
-
-
-@keyframes hone
-	0%
-		transform: translateX(-40px)
-		transition: all 3s ease
-		opacity: 0
-
-	100%
-		transform: translateX(0px)
-		animation-delay: 2s
-		opacity: 1
-	
-.bg-desc
-	text-align: center
-	font-size: 25px
-	line-height: 60px
-	color: #fff
-	opacity: 0
-	margin-top: 25px
-
-.ready .bg-desc
-	animation: bg-desc 2s ease 1s forwards 
-
-
-
-@keyframes bg-desc
-	0%
-		transform: translateY(40px)
-		transition: all 3s ease
-		opacity: 0
-
-	100%
-		transform: translateY(0px)
-		animation-delay: 2s
-		opacity: 1
-
-.header-mobile
-	position: fixed
-	height: 100vh
-	width: 100vw
-	top: 0
-	justify-content: center
-	display: flex
-	align-items: center
-	background-color: rgba(19, 50, 78, 0.89)
-	transition: transform ease 0.2s
-	z-index: 1
-	&.open
-		transform: translateY(-100%)
-
-.menu
-	margin: 0
-	padding: 0
-	li
-		text-decoration: none
-		font-size: 18px
-		list-style-type: none
-		.menu-item
-			color: #fff
-			padding: 20px 90px 
-			display: block
-			border-bottom: 1px solid rgba(108, 121, 132, 0.89);
-			text-transform: uppercase
-			font-weight: bold
-			letter-spacing: 1px
-	li:last-child
-		.menu-item
-			border-bottom: none
-
-.burger-container
-	position: fixed
-	top: 0
-	right: 0px
-	height: 50px
-	z-index: 2
-	.toggle
-		.line
-			fill: #fff
-			width: 40px
-			transform-origin: 50% 50%
-			transform-box: fill-box
-			transition: transform 0.3s cubic-bezier(0, 1, 0.25, 1)
-
-.open
-	#x
-		transform: translateY(200%) rotate(45deg) translateX(-28%) scaleX(0.43)
-	#y
-		transform: rotate(-45deg)
-	#z
-		transform: translateY(-200%) rotate(45deg) translate(28%) scaleX(0.43)
-
 body.overf
 	overflow: hidden
-
-.label
-	width: 40px
-	height: 14px
-	display: block
-	cursor: pointer
-	position: fixed
-	right: 10px
-	top: -3px
-	z-index: 4
-	margin: 30px auto 0
-	border-radius: 14px
-	background-color: #b8feff
-	-webkit-transition: all .4s ease-in-out 0s
-	transition: all .4s ease-in-out 0s
-	&:before
-		top: 50%
-		width: 20px
-		height: 20px
-		margin-top: -10px
-		border-radius: 50%
-		text-align: center
-		-webkit-transition: inherit
-		transition: inherit
-		background-color: #19edf0
-		box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3)
-		position: absolute
-		content: ""
-
-.switch:checked + .night
-	.st5
-		fill: #E9E8A1
-	.st0
-		fill: #164761
-	.st10
-		fill: #778b94
-	.st3
-		fill: rgba(191, 228, 246, 0.23)
-	.st9
-		fill: #EDECD9
-	.label
-		background: #6171c6
-		&:before
-			left: 20px
-			background: #3f51b5
-	.st2
-		animation: night 1s cubic-bezier(0.91, -0.21, 0, 1.12) forwards
-	.st1
-		animation: stars 1s cubic-bezier(0.91, -0.21, 0, 1.12) 0.5s forwards
-		&:nth-child(3n)
-			animation: 10s linear 1s infinite alternate attenuation
-		&:nth-child(51n)
-			animation: 10s linear 1s infinite normal fall
-		&:nth-child(33n)
-			animation: 10s linear 3s infinite normal fall
-
-.night
-	.forest2, .forest3, .mountains4, .forest1, .st10, .st3, .lighthouse, .bottom-line-l, .top-line-l, .top-rhombus, .bottom-rhombus, .light-l, .light-h, .wiring, .house, .bg-h, .window-frame
-		transform: scale(0)
-	.st0
-		animation: lis 1s cubic-bezier(0.22, -0.68, 0.2, 1.84) forwards
-	.st2
-		animation: lis2 1s cubic-bezier(0.67, 0.11, 0.69, 1.98) forwards
-	.forest1
-		animation: lis 1s cubic-bezier(0.22, -0.68, 0.2, 1.84) 0.7s forwards
-	.forest2
-		animation: lis 1s cubic-bezier(0.22, -0.68, 0.2, 1.84) 0.9s forwards
-	.forest3
-		animation: lis 1s cubic-bezier(0.22, -0.68, 0.2, 1.84) 1.1s forwards
-	.mountains4
-		animation: lis 1s cubic-bezier(0.22, -0.68, 0.2, 1.84) 1.3s forwards
-	.st10
-		animation: lis2 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 1.5s forwards
-	.lighthouse
-		animation: lis2 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 1.9s forwards
-	.top-line-l
-		animation: lis2 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2.1s forwards
-	.bottom-line-l
-		animation: lis2 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2.2s forwards
-	.top-rhombus
-		animation: lis2 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2.3s forwards
-	.bottom-rhombus
-		animation: lis2 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2.4s forwards
-	.light-l
-		animation: lis 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2.5s forwards
-	.house
-		animation: lis 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 1.9s forwards
-	.bg-h
-		animation: lis 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2s forwards
-	.light-h
-		animation: lis2 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2.1s forwards
-	.window-frame
-		animation: lis2 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2.2s forwards
-	.wiring
-		animation: lis 0.3s cubic-bezier(0.22, -0.68, 0.2, 1.84) 2.5s forwards
-	.st3
-		animation: clouds 60s ease-in-out forwards 2s infinite
-
-@keyframes lis2
-	0%
-		transform: scale(0)
-		transform-origin: center
-		transform-box: fill-box
-
-	100%
-		transform: scale(1)
-		transform-origin: center
-		transform-box: fill-box
-		opacity: 1
-
-@-moz-keyframes lis2
-	0%
-		transform: scale(0)
-		transform-origin: center
-		transform-box: fill-box
-
-	100%
-		transform: scale(1)
-		transform-origin: center
-		transform-box: fill-box
-		opacity: 1
-
-
-@keyframes lis
-	0%
-		transform: scaleY(0)
-		transform-origin: bottom
-		transform-box: fill-box
-
-	100%
-		transform: scaleY(1)
-		transform-origin: bottom
-		transform-box: fill-box
-		opacity: 1
-
-
-@keyframes night
-	0%
-		transform: translateY(0px)
-
-	50%
-		transform: translateY(227px)
-
-	100%
-		transform: translateY(0px)
-		fill: #fff
-
-
-@keyframes stars
-	0%
-		transform: translateY(327px)
-
-	100%
-		transform: translateY(0px)
-		fill: #fff
-
-
-@keyframes attenuation
-	0%
-		fill: transparent
-
-	100%
-		fill: #fff
-
-
-@keyframes fall
-	0%
-		transform: translate3d(0px, -100px, 0px)
-		fill: #fff
-
-	70%
-		transform: translate3d(0px, -100px, 0px)
-		fill: #fff
-
-	100%
-		transform: translate3d(-120px, 120px, 100px)
-
-
-@keyframes clouds
-	0%
-		transform: translateX(0px)
-
-	50%
-		transform: translateX(300px)
-		transform-box: fill-box
-
-	100%
-		transform: translateX(0px)
 
 section
 	height: 900px
@@ -513,7 +81,7 @@ body
 
 .active
 	.img-wrap
-		animation: forMetwo 1s ease 1s forwards 
+		animation: forMetwo 1s ease 0.8s forwards 
 
 @keyframes forMetwo
 	0%
@@ -546,7 +114,6 @@ body
 	font-size: 16px;
 	line-height: 35px
 	transform: translateY(30px)
-	transition: all 1s ease
 	opacity: 0
 
 .active
@@ -634,45 +201,45 @@ body
 .active
 	.line1
 		color: #3498DB
-		animation: type 0.5s 0.5s steps(20, end) forwards
+		animation: type 0.5s  steps(20, end) forwards
 
 	.cursor1
-		animation: blink 0.5s 1.25s 2 forwards
+		animation: blink 0.5s 0.6s 2 forwards
 
 	.line2
 		color: #D1D5D8
-		animation: type 0.5s 2s steps(20, end) forwards
+		animation: type 0.5s 1.2s steps(20, end) forwards
 
 	.cursor2
-		animation: blink 0.5s 2.75s 2 forwards
+		animation: blink 0.5s 1.8s 2 forwards
 
 	.line3
 		color: #F1C40F
-		animation: type 0.5s 3.5s steps(20, end) forwards
+		animation: type 0.5s 2.4s steps(20, end) forwards
 
 	.cursor3
-		animation: blink 0.5s 4.25s 2 forwards
+		animation: blink 0.5s 3s 2 forwards
 
 	.line4
 		color: #E74C3C
-		animation: type 0.5s 5s steps(20, end) forwards
+		animation: type 0.5s 3.6s steps(20, end) forwards
 
 	.cursor4
-		animation: blink 0.5s 5.75s 2 forwards
+		animation: blink 0.5s 4.2s 2 forwards
 
 	.line5
 		color: #1ABC9C
-		animation: type 0.5s 6.5s steps(20, end) forwards
+		animation: type 0.5s 4.9s steps(20, end) forwards
 
 	.cursor5
-		animation: blink 0.5s 7.25s 2 forwards
+		animation: blink 0.5s 5.3s 2 forwards
 
 	.line6
 		color: #fff
-		animation: type 0.5s 8s steps(20, end) forwards
+		animation: type 1s 6.2s steps(20, end) forwards
 
 	.cursor6
-		animation: blink 0.5s 8.75s infinite
+		animation: blink 0.5s  infinite
 
 @keyframes blink
 	0%
@@ -739,10 +306,15 @@ body
 	top: 30px
 	left: 0
 	opacity: 0
-	transition: opacity 400ms linear
+	z-index: -1
+	transition: opacity 300ms linear
 	&.active
 		opacity: 1
-		transition: opacity 400ms linear
+		transition: opacity 300ms linear
+		z-index: 0
+		&:hover
+			opacity: 0.7
+
 
 .js-carousel__prev
 	border: 30px solid transparent
@@ -761,6 +333,14 @@ body
 	top: 40%
 	position: absolute
 	right: -450px
+
+.js-carousel__next
+	&:active
+		border-left-color: #666b3c
+
+.js-carousel__prev
+	&:active
+		border-right-color: #666b3c
 
 .b-carousel__item img
 	width: 100%
